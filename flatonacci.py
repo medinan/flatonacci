@@ -20,6 +20,8 @@ Note. Please note that we are gonna test the funcion against a lot of different 
 def flatonacci(signature: list, n: int) -> list:
     if n == 0:
         return []
+    if len(signature) != 3 or n < 0:
+        raise ValueError("One or more parameters entered are incorrect")
     sig_copy = signature.copy()
     for idx in range(len(signature), n):
         sig_copy.append(sum(sig_copy[-3:]))
